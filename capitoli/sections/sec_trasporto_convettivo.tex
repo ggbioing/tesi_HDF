@@ -1,0 +1,18 @@
+\section{Trasporto Convettivo}\label{sec:convettivo}
+Se ai capi dei pori è applicata una differenza di pressione idraulica $\Delta P$, si avrà, come descritto dalla legge di Poiseuille, un flusso volumetrico $Q$ proporzionale alla pressione idraulica esercitata, cioè:
+
+\begin{equation}\label{Qt}
+	Q = -N_p\frac{\pi R^4}{8 \eta \Delta x}\Delta P = -N_p \frac{1}{R_p} \Delta P = - L_m \Delta P
+\end{equation}
+\noindent
+\newline
+dove $R$ è il raggio del poro, $\eta$ la viscosità del fluido, $\Delta x$ la lunghezza del poro e $N_p$ il numero totale di pori nella membrana. Con $R_p = (8\eta \Delta x)/(\pi R^4)$ si è indicata la resistenza del poro calcolata secondo la formula di Poiseuille mentre la grandezza $L_m = N_p / R_p$ prende il nome di \textit{coefficiente  di filtrazione} della membrana e si misura in $[m^3 \cdot s^{-1} \cdot mmHg^{-1}]$.\\
+Il numero di moli di soluto che attraversano la membrana trasportati dal flusso $Q$ è dato dal prodotto $Q\cdot C_M$ dove $C_M$ è la concentrazione media di soluto all'interno della membrana. Al posto di $C_M$ possiamo scrivere il valore medio fra le concentrazioni ai capi della membrana\footnote{in ragione dell'ipotesi che la concentrazione del soluto varia in modo lineare attraversando la membrana, il valor medio integrale è pari alla media fra i valori agli estremi e cioè $C_M = 1/\Delta x \int_a^b{C(x)dx} = (C_a+C_b)/2$} corretto per il coefficiente di partizione $\alpha$.  Queste considerazioni portano ad affermare che il soluto trasportato per convezione è:
+
+\begin{equation}\label{phiT}
+	\phi_t = - \varepsilon C_M Q = - \varepsilon \alpha \frac{C_1 + C_2}{2} Q
+\end{equation}
+\noindent
+\newline
+in cui si è introdotto il coefficiente $\varepsilon$ per le stesse argomentazioni fatte in \textsection~\ref{diffusione}. Il termine di flusso $\phi_t$ è misurato in $[mol \cdot s^{-1}]$ e il pedice $t$ indica che il trasporto avviene per convezione.
+È da precisare che in presenza simultanea di diffusione e convezione si ha interazione \textit{competitiva}: il soluto trasportato per convezione non sarà più a disposizione per essere trasportato col meccanismo diffusivo, rendendo quindi quest'ultimo meno efficiente di quanto lo sarebbe in assenza di convezione. 

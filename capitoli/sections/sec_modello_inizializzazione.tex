@@ -1,0 +1,47 @@
+\section{Inizializzazione del sistema}
+Le equazioni differenziali che descrivono la dinamica dei soluti durante l'emodiafiltrazione, illustrate singolarmente nei precedenti paragrafi, sono raggruppate nel seguente sistema:
+\begin{align}
+		&\dot{M}_{ic}^{(s)} = \Phi_{ic}^{(s)}                                    \label{dMic}\\
+		&\dot{M}_{ex}^{(s)} = -\Phi_{ic}^{(s)} -\Phi_{hdf}^{(s)} + Q_s C_s^{(s)} \label{dMex}\\ 
+		&\dot{V}_{ic}       = Q_{ic}                                             \label{dVic}\\
+		&\dot{V}_{is}       = - Q_{ic} + Q_{fc}                                  \label{dVis}\\
+		&\dot{V}_{pl}       = -Q_{fc} -Q_{uf}                                    \label{dVpl}\\
+		&\dot{P}_{ac}       = \frac{1}{C_c} \dot{V}_{pl}                         \label{dPac}\\
+		&\dot{P}_{is}       = E_{is}\dot{V}_{is}                                 \label{dPis}
+\end{align}
+Questo è un sistema di $2N+5$ equazioni differenziali, in cui $N$ è il numero di soluti di cui si vuole descrivere la dinamica\footnote{in questa trattazione $N=9$, e i soluti sono: sodio, potassio, cloro, calcio, fosfato inorganico, magnesio, urea, glucosio e proteine.}. Trattandosi di un sistema del primo ordine, affinché sia risolvibile è necessario fornire i valori iniziali delle variabili.
+
+Per quanto riguarda i volumi, in Guyton et al. \cite{guyton} si afferma che in un uomo adulto che pesa $70$ $kg$ l'acqua totale presente nell'organismo ammonta a circa il 60\% del peso corporeo\footnote{questa percentuale puo variare a seconda dell'età, del sesso e del grado di obesità.}, ed è distribuita nei tre compartimenti principali come indicato in \tablename~\ref{tab:volumi_guyton}.
+\begin{table}[htb]
+	\centering
+	\caption{Distribuzione dei fluidi corporei (fonte: Guyton et al. \cite{guyton})}
+	\begin{tabular}{lcccc}
+	\toprule 
+		                           & \textbf{Plasma}  & \textbf{Interstizio} & \textbf{Cellule} & \textbf{Totale} \\
+  \midrule
+  	\textbf{Volume} (Litri)        &  $3$                 &  $11$                  &  $28$                   & $42$            \\
+   \bottomrule
+\end{tabular}\label{tab:volumi_guyton}
+\end{table}
+A partire da queste informazioni, se si indica con $W_0$ il peso a inizio dialisi del paziente, è possibile inizializzare i volumi dei tre compartimenti con le seguenti equazioni:
+\begin{align*}
+		V_{tot,0}      &= 0,6\cdot W_0          \\
+		V_{pl,0}       &= 3/42  \cdot V_{tot,0} \\
+		V_{is,0}       &= 11/42 \cdot V_{tot,0} \\
+		V_{ic,0}       &= 28/42 \cdot V_{tot,0} 
+\end{align*}
+
+Proseguendo con l'inizializzazione delle variabili, è possibile combinare le equazioni (\ref{eq:ovvia}) e (\ref{eq:meno_ovvia}) con i calcoli accessori esposti in appendice~\ref{app:A} e ricavare il seguente algoritmo di inizializzazione delle masse molari dei soluti:
+\begin{align*}
+		C_{pl,0} &= \text{\emph{dati clinici noti}} \\
+		C_{is,0} &= \alpha_d \cdot C_{pl,0}  \\
+    C_{ic,0} &= \beta \cdot C_{is,0}     \\
+    M_{ic,0} &= C_{ic,0} \cdot Vic0      \\
+    M_{ex,0} &= C_{is,0} \cdot (V_{pl,0}/\alpha_d+ V_{is,0})
+\end{align*}
+
+Le pressioni ai capillari arteriosi e nell'interstizio sono inizializzate come in Ursino et al. \cite{ursino}, cioè:
+\begin{align*}
+		P_{ac,0} &= 35 \text{ \emph{mmHg}} \\
+		P_{is,0} &= -5,97 \text{ \emph{mmHg}}
+\end{align*}

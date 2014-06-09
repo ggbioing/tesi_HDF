@@ -1,0 +1,64 @@
+%טיָאלעש   {     }
+\documentclass[10pt,twoside]{book} 
+\usepackage{amssymb,amsmath}         %pacchetto per la gestione delle formule matematiche
+\usepackage[english, italian]{babel} % regole di sillabazione
+\usepackage[ansinew]{inputenc}       %uso diretto di caratteri accentati
+\usepackage[T1]{fontenc}
+\usepackage[dvips]{epsfig,psfrag}    %pacchetto per la gestione delle figure *.eps
+\usepackage{a4}                      % formato di stampa A4
+\usepackage{cancel}     
+\usepackage{booktabs}   
+
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage[hang,small,bf]{caption}
+\setlength{\captionmargin}{20pt}
+\usepackage{a4}
+\usepackage{natbib}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+
+\begin{document}
+\chapter{Risultati}
+Qui di seguito verranno riportati ed analizzati i dati ottenuti in uscita dal modello.
+Il modello fornisce i dati relativi alle concentrazioni plasmatiche (interstiziali e intracellulari) di sodio, potassio, cloro, calcio, fosforo, magnesio, urea, cratina e proteine durante una seduta di emodiafiltrazione. Per ogni uscita del modello sono stati calcolati gli scostamenti rispetto ai valori ottenuti tramite prelievi ematici ad ogni ora da inizio a fine seduta. I prelievi ematici sono stati effettuati per quattro sedute successive su 6 pazienti. Per errori di descrizione si intendono gli errori commessi dal modello su una determinata seduta utilizzando i parametri della seduta specifica
+I valori riportati in tabella sono stati ricavati considerando i valori di tutte e quattro le sedute effettuate sui sei pazienti .
+
+\begin{tabular}{lcccr}
+\toprule
+Soluto & $\eta$ & $\sigma$ & min & max\\
+\midrule
+$Na^{++}$& 0,105 & 0,931 & -1,928 & 2,696\\
+$k^{+}$ & -0,509 & 4,444 & -11,856 & 9,425\\ 
+$Cl^{-}$& -0,024 & 0,585 & -1,323 & 1,822\\
+$Ca^{++}$& 0,202 &  1,914 & -5,183 & 10,622\\
+$Ph$ & 1,919 &  9,416 & -15,925 & 32,976\\
+$Mg^{++}$& 3,103 &  5,351 & -7,939 & 18,232\\
+Urea & -3,13 & 10,532 & -23,341 & 18,828\\
+Glucosio & -3,786 & 10,024 & -26,67 & 16,422\\
+Proteine & 7,097 &  4,647 & -3,323 & 18,546\\
+\bottomrule
+\caption{Errori di Descrizione }
+\end{tabular}
+
+\begin{tabular}{lcccr}
+\toprule
+Soluto & $\eta$ & $\sigma$ & min & max\\
+\midrule
+$Na^{++}$& 0,7821 & 0,510 & 0,007 & 2,696\\
+$k^{+}$ & 3,3326 & 2,963 & 0,024 & 11,856\\ 
+$Cl^{-}$ & 0,4531 & 0,368 & 0,009 & 1,822\\
+$Ca^{++}$ & 1,288 &  1,424 & 0,029 & 10,622\\
+Ph & 6,932 &  6,616 & 0,048 & 32,976\\
+$Mg^{++}$& 4,795 &  3,887 & 0,046 & 18,232\\
+Urea & 8,884 & 6,403 & 0,35 & 23,241\\
+Glucosio & 8,826 & 6,016 & 0,05 & 26,673\\
+Proteine & 7,230 &  4,435 & 0,162 & 18,546\\
+\bottomrule
+\caption{Errori di Descrizione Assoluti}
+\end{tabular}
+
+
+\end{document}

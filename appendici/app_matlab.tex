@@ -1,0 +1,31 @@
+\chapter{Implementazione in Matlab}\label{app:matlab}
+Il modello di equazioni differenziali ordinarie, che simula una seduta dialitica secondo la modalità dell'\textit{on-line} HDF, è stato implementato utilizzando il software per il calcolo numerico Matlab\textsuperscript\textregistered{} 7 (R14).
+
+\section{Pre-processing}\label{sec:pre_processing}
+Per \textit{pre-processing} si intende l'immissione nel calcolatore dei dati necessari per la simulazione e della loro conversione nelle giuste unità di misura. I dati raccolti durante la dialisi, insieme ai risultati delle analisi dei campioni ematici, sono salvati nel calcolatore attraverso il seguente \textit{script}:\\
+\newline
+\verb|input_dati.m|
+\lstinputlisting{listato/input_dati.m}
+
+Dopo aver salvato i dati primitivi nel file \verb|*.mat| opportuno, la conversione nelle unità di misura utilizzate nel modello è effettuata con il seguente \textit{script}:\\
+\newline
+\verb|pre_processing.m|
+\lstinputlisting{listato/pre_processing.m}
+
+\section{Implementazione del modello}
+Quella che segue è la \verb|function| principale, quella che, terminata la fase di pre-processing (\textsection\ref{sec:pre_processing}) e di ottimizzazione (\textsection\ref{sec:ottimizzazione}), avvia la simulazione numerica. In questa \verb|function| dopo che si sono dichiarate le variabili globali e caricato i dati dello specifico paziente, si passa ai calcoli di inizializzazione del sistema. La soluzione numerica è infine calcolata col solver \verb|ode45| basato sul metodo esplicito di Runge-Kutta del quarto ordine.
+\lstinputlisting{listato/emodiafilt.m}
+\vspace{10pt}
+Nella \verb|function| seguente è implementato il sistema di equazioni differenziali usato dal solver \verb|ode45| per risolvere il problema numerico. Come si nota questa \verb|function| condivide con quella precedente le stesse variabili globali.
+\lstinputlisting{listato/ODE_emodiafilt.m}
+
+\section{Ottimizzazione}\label{sec:ottimizzazione}
+L'algoritmo di ottimizzazione ricerca i parametri del modello secondo lo schema di \figurename~\ref{opt_scheme}. La funzione nativa di Matlab usata per ricercare il minimo della \textit{criterion function} \verb|J_CF| (righe $16$, $18$ e $20$ del listato seguente) è \verb|fmincon|, che ci permette di impostare un dominio di ricerca per i parametri da ottimizzare ($\rho \in [0;10]$, $k \in [0;1]$, $\eta \in [-1;1]$).\\
+\newline
+\verb|ottimizzazione.m|
+\lstinputlisting{listato/ottimizzazione.m}
+\vspace{10pt}
+Tutti i parametri sono ottimizzati attraverso un'unica \textit{criterion function} che al suo interno richiama, a seconda del parametro, i coefficienti per pesare adeguatamente gli scarti fra simulazione numerica e realtà clinica.\\
+\newline
+\verb|J_CF.m|
+\lstinputlisting[numbers=none]{listato/crit_par.m}

@@ -1,0 +1,177 @@
+%èéÈàìòù   {     }
+\documentclass[10pt,twoside]{book} 
+\usepackage{amssymb,amsmath}         %pacchetto per la gestione delle formule matematiche
+\usepackage[english, italian]{babel} % regole di sillabazione
+\usepackage[ansinew]{inputenc}       %uso diretto di caratteri accentati
+\usepackage[T1]{fontenc}
+\usepackage[dvips]{epsfig,psfrag}    %pacchetto per la gestione delle figure *.eps
+\usepackage{a4}                      % formato di stampa A4
+\usepackage{cancel}     
+\usepackage{booktabs}   
+
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage[hang,small,bf]{caption}
+\setlength{\captionmargin}{20pt}
+\usepackage{a4}
+\usepackage{natbib}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+
+\begin{document}
+\chapter{Risultati}
+Qui di seguito verranno riportati ed analizzati i dati ottenuti in uscita dal modello.
+Il modello fornisce i dati relativi alle concentrazioni plasmatiche (interstiziali e intracellulari) di sodio, potassio, cloro, calcio, fosforo, magnesio, urea, cratina e proteine durante una seduta di emodiafiltrazione. Per ogni uscita del modello sono stati calcolati gli scostamenti rispetto ai valori ottenuti tramite prelievi ematici ad ogni ora da inizio a fine seduta. I prelievi ematici sono stati effettuati per quattro sedute successive su 6 pazienti. 
+Utilizzando i dati a disposizione sono stati calcolati gli errori causati dal modello rispetto ai valori dei dati clinici tramite una semplice formula: 
+
+\newline
+Per ciascuna seduta a disposizione si è creata una tabella con i valori degli scostamenti calcolati tramite la formula \ref{}.
+Dall'analisi degli scostamenti relativi a tutte le sedute di tutti i pazienti si nota come il $66\%$ di questi compia un errore compreso tra lo $0-5\%$
+
+
+Per comprendere quanto il modello sia in grado di determinare gli andamenti delle concentrazioni plasmatiche dei differenti soluti, si riportano qui di seguito due tabelle rappresentanti le percentuali all'interno delle quali si posizionano gli socstamenti rispettivamente calcolati ad un'ora da inizio seduta e all'istante finale; i valori sono stai divisi in base alla percentuale di errore commessa: inferiore al $5\%$, compreso tra il $5-10\%$, compreso tra il $10-20\%$ e maggiore del $20\%$.
+\newline
+\begin{tabular}{lcccr}
+\toprule
+Soluto & $0-5\%$ & $5-10\%$ & $10-20\%$ & $>20\%$\\
+\midrule
+$Na^{++}$& 100 & 0 & 0 & 0\\
+$K^{+}$ & 54,2 & 25 & 20,8 & 0\\ 
+$Cl^{-}$& 100 & 0 & 0 & 0\\
+$Ca^{++}$& 95,8 &  0 & 4,2 & 0\\
+$Ph$ & 33,3 &  8,3 & 45,8 & 12,5\\
+$Mg^{++}$& 45,8 &  50 & 4,2 & 0\\
+Urea & 29,2 & 33,3 & 33,3 & 4,2\\
+Creatinina & 20,8 & 41,7 & 33,3 & 4,2\\
+Proteine & 20,8 &  45,8 & 33,3 & 0\\
+\bottomrule
+\caption{Percentuali scostamenti iniziali }
+\end{tabular}
+\newline
+Osservando la prima tabella relativa agli scostamenti iniziali per ogni soluto si nota che per sodio e potassio la totalità degli scostamenti è inferiore al $5\%$: ciò significa che i valori in uscita dal modello si discostano da quelli reali con errori che non superano il $5\%$. Per quato riguarda il potassio, gli costamenti raggiungono la soglia $del 10-20\%$, ma quasi l'$80\%$ dei valori ricade al di sotto del $10\%$ di errore. I casi peggiori invece risultano essere urea, glucosio e fosfato. In questi casi gli errori, anche se in piccola percentuale, superano il valore di errore del $20\%$. Il modello sembra invece rientrare con i valori relativi alla modellistica di magnesio e calcio: più del $90\%$ dei valori commette scostamenti inferiori al $10\%$. 
+\newline
+\begin{tabular}{lcccr}
+\toprule
+Soluto & $0-5\%$ & $5-10\%$ & $10-20\%$ & $>20\%$\\
+\midrule
+$Na^{++}$& 100 & 0 & 0 & 0\\
+$K^{+}$ & 66,7 & 33,3 & 0 & 0\\ 
+$Cl^{-}$& 100 & 0 & 0 & 0\\
+$Ca^{++}$& 95,8 & 4,2 & 0 & 0\\
+$Ph$ & 54,2 &  29,2 & 16,7 & 0\\
+$Mg^{++}$& 50 &  29,2 & 20,8 & 0\\
+Urea & 50 & 29,2 & 20,8 & 0\\
+Creatinina & 50 & 29,2 & 20,8 & 0\\
+Proteine & 45,8 &  35,7 & 16,7 & 0\\
+\bottomrule
+\caption{Percentuali scostamenti fine seduta}
+\end{tabular}
+\newline
+Analizzando invece la tabella degli scostamenti finali del modello, risulta evidente come nessuno dei valori calcolati dal modello, relativi ai soluti presi in considerazione, effettui scostamenti maggiori del $20\%$, indice di una migliore predizione effettuata da parte del modello relativamenti agli andamenti palsmatici. Si mantengono ottimi gli scostamenti di sodio e cloro, minori del $5\%$ e migliorano anche quelli relativi all'urea cratinina e potassio. Quasi l'$80\%$ dei valori relativi a tali soluti compiono un errore inferiore al $10\%$ nel simulare gli andamenti calcolati tramite prelievi ematici.
+Da questa analisi è possibile concludere che il modello simula meglio gli andamenti delle concentrazioni plasmatiche a fine seduta rispetto agli istanti iniziali. Questo può tornare utile al medico come strumento di analisi poichè il modello riesce a predire meglio la situazione del paziente una volta conclusa la seduta di dialisi.
+Infine, per completezza, vengono riportate le percentuali relative ad ogni singolo soluto per tutte le sedute effettuate sui pazienti. Anche in questo caso ciò che si evidenzia è che i valori forniti dal modello relativi a fosforo urea e creatinina presentano i valori di scostamento maggiore, anche se in casi ristretti.
+\newline
+\begin{tabular}{lcccr}
+\toprule
+Soluto & $0-5\%$ & $5-10\%$ & $10-20\%$ & $>20\%$\\
+\midrule
+$Na^{++}$& 100 & 0 & 0 & 0\\
+$K^{+}$ & 74,5 & 19,5 & 5,7 & 0\\ 
+$Cl^{-}$& 100 & 0 & 0 & 0\\
+$Ca^{++}$& 97,7 & 1,1 & 1,1 & 0\\
+$Ph$ & 54 &  20,7 & 21,8 & 3,4\\
+$Mg^{++}$& 57,5 &  33,3 & 9,2 & 0\\
+Urea & 39,1 & 24,1 & 32,2 & 4,6\\
+Creatinina & 29,9 & 33,3 & 33,3 & 3,4\\
+Proteine & 31 &  41,4 & 27,6 & 0\\
+\bottomrule
+\caption{Percentuali scostamenti sedute totali }
+\end{tabular}
+
+\begin{table}[htb]
+	\centering
+	\caption{Capacità descrittiva del modello: errori di stima $e_i$ ed errori assoluti di stima $|e_i|$. Media ($\mu$) e deviazione standard ($\sigma$). Numerosità del campione $N=87$.}\label{tab:descrizione}
+	\begin{tabular}{lrrrrrrrr}
+	\toprule 
+		\textbf{Soluto}   &  \multicolumn{8}{c}{\textbf{Errori di simulazione (\%)}}  \\
+		\cmidrule(lr){2-9}
+				              &        \multicolumn{4}{c}{$e_i$}             &       \multicolumn{4}{c}{$|e_i|$}             \\
+		                  & \multicolumn{1}{c}{$\mu$}      & \multicolumn{1}{c}{$\sigma$}   & $min$   & $max$   & \multicolumn{1}{c}{$\mu$}     & \multicolumn{1}{c}{$\sigma$}   & $min$   & $max$  \\
+    \cmidrule(lr){2-5}\cmidrule(lr){6-9}
+    %                    media       dev.std.        min        max    media ass   dev.st.        min       max
+  	Sodio             & $ 0,10$     & $ 0,92$    & $ -1,93$  & $2,12$  & $0,78$   & $0,48$     & $0,01$ & $ 2,12$   \\
+  	Potassio          & $-0,53$     & $ 4,49$    & $-11,86$  & $7,57$  & $3,31$   & $3,05$     & $0,02$ & $11,86$  \\
+  	Cloro             & $-0,02$     & $ 0,60$    & $ -1,32$  & $1,82$  & $0,46$   & $0,38$     & $0,01$ & $ 1,82$   \\
+  	Calcio            & $ 0,25$     & $ 2,15$    & $ -5,18$  & $10,62$ & $1,48$   & $1,57$     & $0,03$ & $10,62$  \\
+  	Fosfato           & $ 1,44$     & $ 9,13$    & $-15,93$  & $32,98$ & $6,69$   & $6,32$     & $0,44$ & $32,98$  \\
+  	Magnesio          & $ 3,75$     & $ 5,6 $    & $ -7,60$  & $18,23$ & $5,28$   & $4,16$     & $0,05$ & $18,23$  \\
+  	Urea              & $-3,19$     & $10,95$    & $-23,34$  & $18,83$ & $9,13$   & $6,74$     & $0,35$ & $23,34$  \\
+  	Creatinina        & $-4,03$     & $10,43$    & $-26,67$  & $16,42$ & $9,21$   & $6,27$     & $0,06$ & $26,67$  \\
+  	Proteine          & $ 7,33$     & $ 4,94$    & $ -3,32$  & $18,55$ & $7,51$   & $4,66$     & $0,16$ & $18,55$  \\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htb]
+	\centering
+	\caption{Capacità predittiva del modello: errori di stima $e_i$ ed errori assoluti di stima $|e_i|$. Media ($\mu$) e deviazione standard ($\sigma$). Numerosità del campione $N=87$.}\label{tab:descrizione}
+	\begin{tabular}{lrrrrrrrr}
+	\toprule 
+		\textbf{Soluto}   &  \multicolumn{8}{c}{\textbf{Errori di simulazione (\%)}}  \\
+		\cmidrule(lr){2-9}
+				              &        \multicolumn{4}{c}{$e_i$}             &       \multicolumn{4}{c}{$|e_i|$}             \\
+		                  & \multicolumn{1}{c}{$\mu$}      & \multicolumn{1}{c}{$\sigma$}   & $min$   & $max$   & \multicolumn{1}{c}{$\mu$}     & \multicolumn{1}{c}{$\sigma$}   & $min$   & $max$  \\
+    \cmidrule(lr){2-5}\cmidrule(lr){6-9}
+    %                    media       dev.std.        min        max      media ass   dev.st.        min       max
+  	Sodio             & $ -2,25$    & $ 5,82$    & $ -12,93$  & $9,01$   & $5,05$   & $3,61$     & $0,00$ & $12,93$   \\
+  	Potassio          & $-2,79$     & $ 8,06$    & $-21,73$   & $15,58$  & $6,97$   & $4,85$     & $0,04$ & $21,73$  \\
+  	Cloro             & $-1,47$     & $ 4,14$    & $ -8,45$   & $6,40$   & $3,74$   & $2,27$     & $0,12$ & $ 8,45$   \\
+  	Calcio            & $-9,11$     & $ 15,11$   & $ -35,38$  & $21,72$  & $14,25$  & $10,31$    & $0,20$ & $35,38$  \\
+  	Fosfato           & $-4,93$     & $ 15,99$   & $-37,27$   & $27,73$  & $12,41$  & $11,14$    & $0,25$ & $37,27$  \\
+  	Magnesio          & $ 4,00$     & $ 6,45$    & $ -8,65$   & $14,9$   & $6,44$   & $3,96$     & $0,17$ & $14,90$  \\
+  	Urea              & $-9,91$     & $13,99$    & $-34,92$   & $20,87$  & $14,41$  & $9,18$     & $0,12$ & $34,92$  \\
+  	Creatinina        & $-9,71$     & $12,09$    & $-35,08$   & $16,39$  & $13,01$  & $8,37$     & $0,81$ & $35,08$  \\
+  	Proteine          & $ 7,62$     & $5,07$     & $ -4,27$   & $18,48$  & $7,96$   & $4,51$     & $0,01$ & $18,48$  \\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+%\begin{tabular}{lcccr}
+%\toprule
+%Soluto & $\eta$ & $\sigma$ & min & max\\
+%\midrule
+%$Na^{++}$& 0,105 & 0,931 & -1,928 & 2,696\\
+%$k^{+}$ & -0,509 & 4,444 & -11,856 & 9,425\\ 
+%$Cl^{-}$& -0,024 & 0,585 & -1,323 & 1,822\\
+%$Ca^{++}$& 0,202 &  1,914 & -5,183 & 10,622\\
+%$Ph$ & 1,919 &  9,416 & -15,925 & 32,976\\
+%$Mg^{++}$& 3,103 &  5,351 & -7,939 & 18,232\\
+%Urea & -3,13 & 10,532 & -23,341 & 18,828\\
+%Glucosio & -3,786 & 10,024 & -26,67 & 16,422\\
+%Proteine & 7,097 &  4,647 & -3,323 & 18,546\\
+%\bottomrule
+%\caption{Errori di Descrizione }
+%\end{tabular}
+
+%\begin{tabular}{lcccr}
+%\toprule
+%Soluto & $\eta$ & $\sigma$ & min & max\\
+%\midrule
+%$Na^{++}$& 0,7821 & 0,510 & 0,007 & 2,696\\
+%$k^{+}$ & 3,3326 & 2,963 & 0,024 & 11,856\\ 
+%$Cl^{-}$ & 0,4531 & 0,368 & 0,009 & 1,822\\
+%$Ca^{++}$ & 1,288 &  1,424 & 0,029 & 10,622\\
+%Ph & 6,932 &  6,616 & 0,048 & 32,976\\
+%$Mg^{++}$& 4,795 &  3,887 & 0,046 & 18,232\\
+%Urea & 8,884 & 6,403 & 0,35 & 23,241\\
+%Glucosio & 8,826 & 6,016 & 0,05 & 26,673\\
+%Proteine & 7,230 &  4,435 & 0,162 & 18,546\\
+%\bottomrule
+%\caption{Errori di Descrizione Assoluti}
+%\end{tabular}
+%}
+
+\end{document}

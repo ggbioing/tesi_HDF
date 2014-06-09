@@ -1,0 +1,81 @@
+%èéÈàìòù
+\input capitoli/preambolo.tex
+
+\begin{document}
+\hyphenation{emo-dia-fil-tra-zio-ne dia-liz-za-to-re ma-gne-sio phy-sio-lo-gy coef-fi-cien-te fluido-di-na-mi-ca iner-tan-za me-di-cal in-co-gni-te bi-blio-gra-fi-che si-mu-la-re so-lu-zio-ni si-mu-la-zio-ne in-va-li-da-te endo-tos-si-ne pa-ra-go-na-te i-ner-tan-za i-ne-sis-ten-te i-ni-zial-men-te ca-pil-la-ri re-spon-sa-bi-le in-te-ra-zio-ne con-si-de-ra-zio-ni in-ten-dia-mo ri-fe-ri-men-to pro-ce-di-men-to pro-prie-tà me-ta-bo-lis-mo}
+
+\input capitoli/frontespizio.tex
+\newpage
+\thispagestyle{empty}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Tab.}
+
+\input capitoli/ringraziamenti.tex
+\newpage
+\thispagestyle{empty}
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+\addcontentsline{toc}{chapter}{Sommario}
+\input capitoli/SOMMARIO.tex
+\addcontentsline{toc}{chapter}{Summary}
+\input capitoli/SUMMARY_new.tex
+
+
+\newpage
+\thispagestyle{empty}
+
+\part{Introduzione}
+\input capitoli/intro_parte_uno.tex
+\newpage
+\thispagestyle{empty}
+\input capitoli/Ch_Anatomia.tex
+\input capitoli/Ch_OnlineHDF.tex
+
+\newpage
+\thispagestyle{empty}
+
+\part{Materiali e Metodi}
+\input capitoli/Ch_Math.tex
+\newpage
+\thispagestyle{empty}
+\input capitoli/Ch_Relazioni_Costitutive.tex
+\newpage
+\thispagestyle{empty}
+\input capitoli/Ch_Modello_HDF.tex
+\newpage
+\begin{center}
+{ }
+\end{center}
+\newpage
+\thispagestyle{empty}
+\input capitoli/Ch_Ottimizzazione.tex
+
+\part{Risultati e Discussione}
+\input capitoli/Ch_capacit_descrittive.tex
+\newpage
+\thispagestyle{empty}
+\input capitoli/Ch_capacit_predittive.tex
+\input capitoli/Ch_Conclusioni_e_SF.tex
+
+\newpage
+\thispagestyle{empty}
+
+\part{Appendici e Bibliografia}
+\appendix
+\input{appendici/appendiceA.tex}
+\input{appendici/appendiceB.tex}
+\newpage
+\thispagestyle{empty}
+\input{appendici/app_protocollo.tex}
+\input{appendici/app_matlab.tex}
+
+\newpage
+\thispagestyle{empty}
+
+\addcontentsline{toc}{chapter}{Bibliografia}
+\bibliographystyle{unsrt}
+\bibliography{capitoli/biblio}
+
+\end{document}
+

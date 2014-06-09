@@ -1,0 +1,74 @@
+\documentclass[10pt,twoside]{book}
+\usepackage{amssymb,amsmath}         % pacchetto per la gestione delle formule matematiche
+\usepackage[english, italian]{babel} % regole di sillabazione
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage[T1]{fontenc}
+\usepackage[dvips]{epsfig,psfrag}    % pacchetto per la gestione delle figure *.eps
+\usepackage{a4}                      % formato di stampa A4
+\usepackage{cancel}
+\usepackage{booktabs}
+\usepackage{gensymb}
+\usepackage{tabularx}
+
+\usepackage{fancyhdr}
+%\headsep = 30pt
+\pagestyle{fancy} 
+% I comandi seguenti impediscono la scrittura in maiuscolo 
+% dei nomi dei capitoli e dei paragrafi nelle testatine 
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}} 
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}} 
+\fancyhf{} % Rimuove l'attuale contenuto della testatina 
+% e del piè di pagina 
+\fancyhead[LE,RO]{\thepage} 
+\fancyhead[LO]{\rightmark} 
+\fancyhead[RE]{\leftmark} 
+\renewcommand{\headrulewidth}{0.5pt} 
+\renewcommand{\footrulewidth}{0pt} 
+\addtolength{\headheight}{0.5pt} % Riserva spazio per la linea 
+\fancypagestyle{plain}{% 
+\fancyhead{} % Ignora, nello stile plain, le testatine e la linea 
+\renewcommand{\headrulewidth}{0pt}} 
+
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage[hang,small,bf]{caption}
+\setlength{\captionmargin}{20pt}
+\usepackage{a4}
+\usepackage{natbib}
+%\usepackage{indentfirst}
+\usepackage{wrapfig}
+
+% Carico il pacchetto color e 
+% definisco i colori uguali a quelli di default di matlab
+\usepackage{color}
+\definecolor{commenti}{rgb}{0.13,0.55,0.13}
+\definecolor{stringhe}{rgb}{0.63,0.125,0.94}
+
+\usepackage{listings} % inserisce listati di programmi
+\lstloadlanguages{Matlab}
+\lstset{
+basicstyle=\small\ttfamily,
+basicstyle = \scriptsize, % print whole listing small
+keywordstyle = \color{blue},% blue keywords
+identifierstyle =, % nothing happens
+commentstyle = \color{commenti}, % comments
+stringstyle = \ttfamily \color{stringhe}, % typewriter type for strings
+showstringspaces = false, % no special string spaces
+emph = {for, if, then, else, end},
+emphstyle = \color{blue},
+firstnumber = 1, % numero della prima linea
+numbers = left, %  show number_line
+numberstyle = \tiny, % style of number_line
+stepnumber = 5, % one number_line after stepnumber
+numbersep = 5pt,
+language = {Matlab}, % per riconoscere la sintassi matlab
+extendedchars = true, % per abilitare caratteri particolari
+breaklines = true, % per mandare a capo le righe troppo lunghe
+breakautoindent = true, % indenta le righe spezzate
+breakindent = 30pt, % indenta le righe di 30pt
+frame=lines,
+deletekeywords = {beta, gamma},
+morekeywords={fmincon}
+}

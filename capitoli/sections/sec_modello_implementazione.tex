@@ -1,0 +1,11 @@
+\section{Implementazione}
+Il modello matematico è stato implementato in Matlab\textsuperscript\textregistered{} 7 (R14). Il sistema di equazioni differenziali ordinarie (ODE) è stato risolto utilizzando il \textit{solver} \verb|ode45| di Matlab, basato sul metodo esplicito di Runge-Kutta del quarto ordine. L'implementazione è mostrata sinteticamente nel seguente listato in pseudo-codice:
+\begin{verbatim}
+>> function emodiafilt(paziente)
+>> load dati_paziente; 
+   ...                               % calcoli di inizializzazione
+>> Y0 = ...        % vettore contenente le variabili inizializzate
+>> [T,Y] = ode45(@ODEemodiafilt,tempo,Y0); % Integrazione numerica
+>> plotResults(T,Y)
+\end{verbatim}
+Il listato completo è fornito in appendice \ref{app:matlab}.

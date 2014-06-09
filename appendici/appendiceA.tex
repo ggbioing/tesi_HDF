@@ -1,0 +1,57 @@
+\chapter{Parametri del modello ``paziente''}\label{app:A}
+\section{Coefficienti di Donnan - $\alpha_d$}
+Come spiegato in \textsection\ref{sec:donnan}, sono le proteine plasmatiche, che a $pH$ fisiologico si trovano in forma anionica e sono impermeanti alla membrana capillare, che causano l'effetto Donnan. Considerando l'Eq.~(\ref{donnan}) e la \tablename~\ref{tab:osmolarit}, all'equilibrio il coefficiente di Donnan $\alpha$, relativo a un generico soluto, si calcola attraverso la formula:
+\begin{equation}\label{eq:donnan_eq}
+	\alpha = \frac{C_{is,eq}}{C_{pl,eq}}
+\end{equation}
+in cui i valori plasmatici e interstiziali di equilibrio sono ricavati dalla \tablename~\ref{tab:osmolarit}. Ci si aspetta che tale coefficiente, per la fisica dell'effetto Donnan, vari in funzione della concentrazione plasmatica delle proteine ($T_p$ espressa in $gr/dL$). In questa sede si ipotizza che:
+\begin{itemize}
+	\item l'effetto Donnan sia linearmente dipendente dalla concentrazione plasmatica delle proteine;
+	\item che l'effetto si annulli in assenza di proteine, cioè che $\alpha_d = 1$ se $T_p=0$;
+	\item che $\alpha_d$ assuma i valori forniti dall'Eq.(\ref{eq:donnan_eq}) quando $T_p=7$ $gr/dL$.
+\end{itemize}
+Il problema, così esposto, diventa semplicemente quello di trovare l'equazione di una retta passante per due punti. L'equazione cercata è:
+\begin{equation}\label{eq:donnan}
+	\alpha_d = \frac{\alpha-1}{7} \cdot T_p + 1
+\end{equation}
+
+\section{Coefficienti di equilibrio cellulare - $\beta$}\label{sec:beta}
+Da quanto spiegato in \textsection~\ref{ss:trasp_membr}, il coefficiente $\beta$ rappresenta il rapporto di equilibrio fra concentrazione intracellulare ed interstiziale. Tale rapporto di equilibrio lo ricaviamo dalla \tablename~\ref{tab:osmolarit}, e pertanto l'equazione che ci permette di calcolare la costante $\beta$ per ogni soluto è:
+\begin{equation}
+	\beta = \frac{C_{ic,eq}}{C_{is,eq}}
+\end{equation}
+
+
+\begin{table}[htb]
+	\centering
+	\caption{Sostanze osmolari nel compartimento plasmatico, interstiziale e intracellulare, tratte da Guyton et al. \cite{guyton}. Valori all'equilibrio.}
+	\begin{tabular}{lrrr}
+	\toprule 
+		& \textbf{Plasma}        & \textbf{Interstiziale} & \textbf{Intracellulare}       \\
+  	& $(mOsm/L_{H_20})$ & $(mOsm/L_{H_20})$ & $(mOsm/L_{H_20})$ \\
+  \midrule
+  	$Na^+$                     &  $142,0$  &  $139,0$  &  $14,0$  \\
+  	$K^+$                      &  $4,2$    &  $4,0$    &  $140,0$ \\
+  	$Ca^{++}$                  &  $1,3$    &  $1,2$    &  $0,0$   \\
+  	$Mg^{++}$                     &  $0,8$    &  $0,7$    &  $20,0$  \\
+  	$Cl^-$                     &  $108,0$  &  $108,0$  &  $4,0$   \\
+  	$HCO_3^-$                  &  $24,0$   &  $28,3$   &  $10,0$  \\
+  	$HPO_4^{--}$,$H_2PO_4^-$   &  $2,0$    &  $2,3$    &  $11,0$  \\
+  	$SO_4^-$                   &  $0,5$    &  $0,5$    &  $1,0$   \\
+  	Fosfocreatina              &           &           &  $45,0$  \\
+  	Carnosina                  &           &           &  $14,0$  \\
+  	Aminoacici                 &  $2,0$    &  $2,0$    &  $8,0$   \\
+  	Creatinina                 &  $0,2$    &  $0,2$    &  $9,0$   \\
+  	Lattato                    &  $1,2$    &  $1,2$    &  $1,5$   \\
+  	Adenosina trifosfato       &           &           &  $5,0$   \\
+  	Esoso monofosfato          &           &           &  $3,7$   \\
+  	Glucosio                   &  $5,6$    &  $5,6$    &          \\
+  	Proteina                   &  $1,2$    &  $0,2$    &  $4,0$   \\
+  	Urea                       &  $4,0$    &  $4,0$    &  $4,0$   \\
+  	Altri                      &  $4,8$    &  $3,6$    &  $7,0$  \\
+  	$mOsm/L$ totali            &  $301,8$  &  $300,8$  &  $301,2$ \\
+  \midrule
+  	Attività osmotica corretta &  $282,0$  &  $281,0$  &  $281,0$   \\
+  \bottomrule
+\end{tabular}\label{tab:osmolarit}
+\end{table}
